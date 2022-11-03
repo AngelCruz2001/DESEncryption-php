@@ -5,7 +5,7 @@ function my_decrypt($data, $key)
 {
     $encryption_key = base64_decode($key);
     list($encrypted_data, $iv) = explode('::', base64_decode($data), 2);
-    return openssl_decrypt($encrypted_data, 'DES-CBC', $encryption_key, 0, $iv);
+    return openssl_decrypt($encrypted_data, '', $encryption_key, 0, $iv);
 }
 
 
